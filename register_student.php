@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>E-Exam | Student Registration Page</title>
@@ -16,10 +17,10 @@
   <link rel="stylesheet" href="css/adminlte.min.css">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
-  <!-- Captcha-->
-  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-
+  <!-- Toast -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.css" rel="stylesheet">
 </head>
+
 <body class="hold-transition register-page">
 <div class="register-box">
   <div class="register-logo">
@@ -30,9 +31,9 @@
     <div class="card-body register-card-body">
       <p class="login-box-msg">Register a new <span><b>free</b></span> membership</p>
 
-      <form action="../../index.html" method="post">
+      <form id="regform" action="" method="post">
         <div class="input-group mb-3">
-          <input type="text" class="form-control" placeholder="Full name">
+          <input id="name" type="text" class="form-control" placeholder="Full name">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-user"></span>
@@ -40,18 +41,18 @@
           </div>
         </div>
         <div class="input-group mb-3">
-          <input type="tel" class="form-control" placeholder="Mobile" maxlength="10" minlength="10" pattern="[0-9]{10}">
+          <input id="mobile" type="tel" class="form-control" placeholder="Mobile" maxlength="10" minlength="10" pattern="[0-9]{10}">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-mobile"></span>
             </div>
           </div>
           <div class="input-group-append">
-            <button class="btn btn-outline-secondary" type="button">Verify</button>
+            <button class="btn btn-outline-secondary" type="button" id="sendotp">Verify</button>
           </div>
         </div>
         <div class="input-group mb-3">
-          <input type="text" class="form-control" placeholder="OTP Code">
+          <input id="otp" type="text" class="form-control" placeholder="OTP Code">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-key"></span>
@@ -60,7 +61,7 @@
         </div>
 
         <div class="input-group mb-3">
-          <input type="password" class="form-control" placeholder="Password">
+          <input id="password" type="password" class="form-control" placeholder="Password">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-lock"></span>
@@ -68,7 +69,7 @@
           </div>
         </div>
         <div class="input-group mb-3">
-          <input type="password" class="form-control" placeholder="Retype password">
+          <input id="cpassword" type="password" class="form-control" placeholder="Retype password">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-lock"></span>
@@ -105,5 +106,11 @@
 <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
 <script src="js/adminlte.min.js"></script>
+<!-- Captcha-->
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<!-- Toast -->
+<Script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+<!-- APP -->
+<Script src="js/add_student.js"></script>
 </body>
 </html>

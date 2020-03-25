@@ -2,7 +2,7 @@
 
     include 'config.php';
 
-    if(session_start())
+    if(session_start() && isset($_POST['to']))
     {
         $to = $_POST['to'];
         $characters = '0123456789';
