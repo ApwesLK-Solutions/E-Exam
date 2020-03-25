@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>E-Exam | Student Login</title>
+  <title>E-Exam | Teacher Login</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -21,7 +21,7 @@
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <a href="login_student.php"><b>E-Exam</b> | Student</a>
+    <a href="login_teacher.php"><b>E-Exam</b> | Teacher</a>
   </div>
   <!-- /.login-logo -->
   <div class="card">
@@ -66,7 +66,7 @@
         <a href="forgot-password.php">I forgot my password</a>
       </p>
       <p class="mb-0">
-        <a href="register_student.php" class="text-center">Register a new <span><b>Free</b></span> membership</a>
+        <a href="register_teacher.php" class="text-center">Register a new <span><b>Free</b></span> membership</a>
       </p>
     </div>
     <!-- /.login-card-body -->
