@@ -62,7 +62,6 @@ document.forms.regform.onsubmit = function(e)
         }
         request.send("name=" + _("name").value + "&mobile=" + _("mobile").value + "&password=" + _("password").value + "&otp=" + _("otp").value + "&type=3"); 
     }
-    
 }
 
 //Send OTP
