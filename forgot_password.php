@@ -37,9 +37,9 @@
             <div class="input-group-text">
               <span class="fas fa-mobile"></span>
             </div>
-            <div class="input-group-append">
-            <button class="btn btn-outline-secondary" type="button" id="sendotp">Send Code</button>
           </div>
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="button" id="sendotp">Send Code</button>
           </div>
         </div>
         <div class="input-group mb-3">
