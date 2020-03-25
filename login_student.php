@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>E-Exam | Student Login</title>
+  <title>E-Exam | Login</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -21,7 +21,7 @@
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <a href="login_student.php"><b>E-Exam</b> | Student</a>
+    <a href="login_student.php"><b>E-Exam</b> | Login</a>
   </div>
   <!-- /.login-logo -->
   <div class="card">
@@ -29,6 +29,24 @@
       <p class="login-box-msg">Sign in to start your session</p>
 
       <form action=" " method="post">
+        <div class="form-group clearfix text-center">
+          <div class="icheck-primary d-inline">
+            <input type="radio" id="student" name="r1" checked>
+            <label for="student">Student 
+            </label>
+          </div>
+          <div class="icheck-primary d-inline">
+            <input type="radio" id="teacher" name="r1">
+            <label for="teacher">Teacher 
+            </label>
+          </div>
+          <div class="icheck-primary d-inline">
+            <input type="radio" id="admin" name="r1">
+            <label for="admin">
+              Admin 
+            </label>
+          </div>
+        </div>
         <div class="input-group mb-3">
           <input type="tel" class="form-control" placeholder="Mobile" maxlength="10" minlength="10" pattern="[0-9]{10}">
           <div class="input-group-append">
