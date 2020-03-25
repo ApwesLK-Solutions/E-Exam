@@ -17,6 +17,8 @@
   <link rel="stylesheet" href="css/adminlte.min.css">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  <!-- Toastr -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.css" rel="stylesheet">
 </head>
 <body class="hold-transition login-page">
 <div class="login-box">
@@ -28,27 +30,9 @@
     <div class="card-body login-card-body">
       <p class="login-box-msg">Sign in to start your session</p>
 
-      <form action=" " method="post">
-        <div class="form-group clearfix text-center">
-          <div class="icheck-primary d-inline">
-            <input type="radio" id="student" name="r1" checked>
-            <label for="student">Student 
-            </label>
-          </div>
-          <div class="icheck-primary d-inline">
-            <input type="radio" id="teacher" name="r1">
-            <label for="teacher">Teacher 
-            </label>
-          </div>
-          <div class="icheck-primary d-inline">
-            <input type="radio" id="admin" name="r1">
-            <label for="admin">
-              Admin 
-            </label>
-          </div>
-        </div>
+      <form id="login" action=" " method="post">
         <div class="input-group mb-3">
-          <input type="tel" class="form-control" placeholder="Mobile" maxlength="10" minlength="10" pattern="[0-9]{10}">
+          <input id="username" type="tel" class="form-control" placeholder="Mobile" maxlength="10" minlength="10" pattern="[0-9]{10}">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-mobile"></span>
@@ -56,7 +40,7 @@
           </div>
         </div>
         <div class="input-group mb-3">
-          <input type="password" class="form-control" placeholder="Password">
+          <input id="password" type="password" class="form-control" placeholder="Password">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-lock"></span>
@@ -64,14 +48,6 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-8">
-            <div class="icheck-primary">
-              <input type="checkbox" id="remember">
-              <label for="remember">
-                Remember Me
-              </label>
-            </div>
-          </div>
           <!-- /.col -->
           <div class="col-4">
             <button type="submit" class="btn btn-primary btn-block">Sign In</button>
@@ -98,6 +74,8 @@
 <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
 <script src="js/adminlte.min.js"></script>
-
+<!-- APP -->
+<script src="js/login.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 </body>
 </html>
