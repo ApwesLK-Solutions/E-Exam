@@ -6,7 +6,7 @@
     define("MYSQL_PASS", "1234");
     define("MYSQL_DB" , "paperdb");
 
-    define("SITEURL", "localhost:8080/question/");
+    define("SITEURL", "http://localhost:8080/question/E-Exam/");
 
     //ONLINE MCQ
     //Property of Codeoven.lk
