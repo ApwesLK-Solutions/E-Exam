@@ -112,5 +112,6 @@
 <Script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 <!-- APP -->
 <Script src="js/add_student.js"></script>
+<Script src="js/captcha.js"></script>
 </body>
 </html>
