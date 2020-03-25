@@ -36,7 +36,7 @@ document.forms.regform.onsubmit = function(e)
                 if(result == "SUCCESS")
                 {
                     toastr.success("You Have Been Registered. Redirecting to Login...");
-                    setTimeout(() => {window.location.replace("login_student.php"); }, 3000);
+                    setTimeout(() => {window.location.replace("login_teacher.php"); }, 3000);
                 }
                 else if(result == "ALRDEXI")
                 {
@@ -60,7 +60,7 @@ document.forms.regform.onsubmit = function(e)
                 }
             }
         }
-        request.send("name=" + _("name").value + "&mobile=" + _("mobile").value + "&password=" + _("password").value + "&otp=" + _("otp").value + "&type=3"); 
+        request.send("name=" + _("name").value + "&mobile=" + _("mobile").value + "&password=" + _("password").value + "&otp=" + _("otp").value + "&type=2"); 
     }
     
 }
