@@ -21,7 +21,7 @@
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <a href="login_student.php"><b>E-Exam</b>Student</a>
+    <a href="login_student.php"><b>E-Exam</b> | Student</a>
   </div>
   <!-- /.login-logo -->
   <div class="card">
