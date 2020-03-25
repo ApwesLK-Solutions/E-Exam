@@ -30,16 +30,43 @@
 
       <form action="recover-password.php" method="post">
         <div class="input-group mb-3">
-        <input type="tel" class="form-control" placeholder="Mobile" maxlength="10" minlength="10" pattern="[0-9]{10}">
+        <input type="tel" class="form-control" placeholder="Mobile" maxlength="10" minlength="10" pattern="[0-9]{10}" required>
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-mobile"></span>
+            </div>
+            <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="button" id="sendotp">Send Code</button>
+          </div>
+          </div>
+        </div>
+        <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="OTP Code" required>
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-key"></span>
+            </div>
+          </div>
+        </div>
+        <div class="input-group mb-3">
+        <input type="password" class="form-control" placeholder="New Password" required>
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-lock"></span>
+            </div>
+          </div>
+        </div>
+        <div class="input-group mb-3">
+        <input type="password" class="form-control" placeholder="Confirm Password" required>
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-lock"></span>
             </div>
           </div>
         </div>
         <div class="row">
           <div class="col-12">
-            <button type="submit" class="btn btn-primary btn-block">Request new password</button>
+            <button type="submit" class="btn btn-primary btn-block">Reset password</button>
           </div>
           <!-- /.col -->
         </div>
