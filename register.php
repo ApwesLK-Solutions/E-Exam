@@ -28,7 +28,7 @@
 
   <div class="card">
     <div class="card-body register-card-body">
-      <p class="login-box-msg">Register a new membership</p>
+      <p class="login-box-msg">Register a new <span><b>free</b></span> membership</p>
 
       <form action="../../index.html" method="post">
         <div class="input-group mb-3">
@@ -46,7 +46,19 @@
               <span class="fas fa-mobile"></span>
             </div>
           </div>
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="button">Verify</button>
+          </div>
         </div>
+        <div class="input-group mb-3">
+          <input type="number" class="form-control" placeholder="OTP Code"  minlength="4">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fab fa-font-awesome"></span>
+            </div>
+          </div>
+        </div>
+
         <div class="input-group mb-3">
           <input type="password" class="form-control" placeholder="Password">
           <div class="input-group-append">
@@ -63,7 +75,7 @@
             </div>
           </div>
         </div>
-        <div class="g-recaptcha input-group mb-3" data-sitekey="6LcK1eMUAAAAAKl7tZOnOgPEMmRLwk_XUjtJZpgr" style="margin-left: 7px"></div>
+        <div class="g-recaptcha input-group mb-3 mx-auto" data-sitekey="6LcK1eMUAAAAAKl7tZOnOgPEMmRLwk_XUjtJZpgr"></div>
         <div class="row">
           <div class="col-8">
             <div class="icheck-primary">
