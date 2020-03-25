@@ -33,7 +33,7 @@
 
       <form id="regform" action="" method="post">
         <div class="input-group mb-3">
-          <input id="name" type="text" class="form-control" placeholder="Full name">
+          <input id="name" type="text" class="form-control" placeholder="Full name" required>
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-user"></span>
@@ -41,7 +41,7 @@
           </div>
         </div>
         <div class="input-group mb-3">
-          <input id="mobile" type="tel" class="form-control" placeholder="Mobile" maxlength="10" minlength="10" pattern="[0-9]{10}">
+          <input id="mobile" type="tel" class="form-control" placeholder="Mobile" maxlength="10" minlength="10" pattern="[0-9]{10}" required>
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-mobile"></span>
@@ -52,7 +52,7 @@
           </div>
         </div>
         <div class="input-group mb-3">
-          <input id="otp" type="text" class="form-control" placeholder="OTP Code">
+          <input id="otp" type="text" class="form-control" placeholder="OTP Code" required>
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-key"></span>
@@ -61,7 +61,7 @@
         </div>
 
         <div class="input-group mb-3">
-          <input id="password" type="password" class="form-control" placeholder="Password">
+          <input id="password" type="password" class="form-control" placeholder="Password" required>
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-lock"></span>
@@ -69,14 +69,14 @@
           </div>
         </div>
         <div class="input-group mb-3">
-          <input id="cpassword" type="password" class="form-control" placeholder="Retype password">
+          <input id="cpassword" type="password" class="form-control" placeholder="Retype password" required>
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-lock"></span>
             </div>
           </div>
         </div>
-        <div class="g-recaptcha input-group mb-3 mx-auto" data-sitekey="6LcK1eMUAAAAAKl7tZOnOgPEMmRLwk_XUjtJZpgr"></div>
+        <div class="g-recaptcha input-group mb-3 mx-auto" data-sitekey="6LcK1eMUAAAAAKl7tZOnOgPEMmRLwk_XUjtJZpgr" required></div>
         <div class="row">
           <div class="col-8">
             <div class="icheck-primary">
