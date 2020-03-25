@@ -11,15 +11,15 @@ document.forms.regform.onsubmit = function(e)
     {
         toastr.error("Please Fill All the Fields..");
     }
-    elseif(_("otp").value == "")
+    else if(_("otp").value == "")
     {
         toastr.error("Verify Your Mobile Number..");
     }
-    elseif(_("password").value != _("cpassword").value)
+    else if(_("password").value != _("cpassword").value)
     {
         toastr.error("Password and Confirm Password Not Matched..");
     }
-    elseif(verifyCaptcha() == false)
+    else if(verifyCaptcha() == false)
     {
         toastr.error("Please Complete the Captcha..");
     }
