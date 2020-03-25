@@ -54,7 +54,7 @@
           <input type="number" class="form-control" placeholder="OTP Code"  minlength="4">
           <div class="input-group-append">
             <div class="input-group-text">
-              <span class="fab fa-font-awesome"></span>
+              <span class="fab fa-caret-square-right"></span>
             </div>
           </div>
         </div>
