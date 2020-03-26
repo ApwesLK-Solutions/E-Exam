@@ -11,10 +11,17 @@
   <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-  <!-- overlayScrollbars -->
+  <!-- iCheck for checkboxes and radio inputs -->
+  <link rel="stylesheet" href="../plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+  <!-- Select2 -->
+  <link rel="stylesheet" href="../plugins/select2/css/select2.min.css">
+  <link rel="stylesheet" href="../plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
+  <!-- Theme style -->
   <link rel="stylesheet" href="../css/adminlte.min.css">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  <!-- summernote -->
+  <link rel="stylesheet" href="../plugins/summernote/summernote-bs4.css">
 </head>
 <body class="hold-transition sidebar-mini">
 <!-- Site wrapper -->
@@ -191,13 +198,13 @@
               <li class="nav-item">
                 <a href="add_class.html" class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Add new class</p>
+                  <p>Add New Class</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="my_classes.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>my classes</p>
+                  <p>My Classes</p>
                 </a>
               </li>
             </ul>
@@ -234,15 +241,56 @@
       <!-- Default box -->
       <div class="card">
         <div class="card-header">
-          <h3 class="card-title">Add new class</h3>
-
-          <div class="card-tools">
-            <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
-              <i class="fas fa-minus"></i></button>
-          </div>
+          <h3 class="card-title">Add New Class</h3>
         </div>
         <div class="card-body">
-          Start creating your amazing application!
+          <form id="" action="" method="POST">
+            <div class="row">
+              <div class="col-md-12">
+
+                <div class="form-group">
+                  <label>Select Grade</label>
+                  <select class="form-control select2" id="grade" name="grade" style="width: 100%;" required>
+                    <option>Alaska</option>
+                    <option>California</option>
+                    <option>Delaware</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label>Select Subject</label>
+                  <select class="form-control select2" id="subject" name="subject" style="width: 100%;" required>
+                    <option>Alaska</option>
+                    <option>California</option>
+                    <option>Delaware</option>
+                  </select>
+                </div>
+                
+                <div class="form-group">
+                  <label>Discription about subject</label>
+                    <textarea class="textarea" placeholder="Place some text here" style="width:100%; height: 500px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
+                </div>
+
+                <div class="form-group">
+                  <label>Select Institute (If you teaching in more than one institute,please  select all available institutes)</label>
+                  <select class="select2" multiple="multiple" id="institute" name="institute" data-placeholder="Select a State" style="width: 100%;">
+                    <option>Alaska</option>
+                    <option>California</option>
+                    <option>Delaware</option>
+                  </select>
+                </div>
+                
+                <div class="form-group">
+                  <label>Enrollment Key.(This Key should provide to students to access the subject)</label>
+                  <input type="text" class="form-control" id="enroll" name="enroll" placeholder="Enrollment Key"> 
+                  <span class="form-group-addon"><input type="checkbox" id="public" name="public"> Show to the Public</span>
+                </div>
+                <div class="col-3 float-right">
+                  <button type="submit" class="btn btn-primary btn-block ">Add class</button>
+                </div>
+              </div>
+            </div>
+          </form>
         </div>
         <!-- /.card-body -->
         <div class="card-footer">
@@ -251,7 +299,6 @@
         <!-- /.card-footer-->
       </div>
       <!-- /.card -->
-
     </section>
     <!-- /.content -->
   </div>
@@ -281,5 +328,26 @@
 <script src="../js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="../js/demo.js"></script>
+<!-- Select2 -->
+<script src="../plugins/select2/js/select2.full.min.js"></script>
+<!-- Summernote -->
+<script src="../plugins/summernote/summernote-bs4.min.js"></script>
+<script>
+  $(function () {
+    // Summernote
+    $('.textarea').summernote()
+  })
+</script>
+<script>
+  $(function () {
+    //Initialize Select2 Elements
+    $('.select2').select2()
+
+    //Initialize Select2 Elements
+    $('.select2bs4').select2({
+      theme: 'bootstrap4'
+    })
+  })
+</script>
 </body>
 </html>
