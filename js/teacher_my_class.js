@@ -57,18 +57,21 @@ function prepare_update_class(element)
     var Enrollment =_('enroll');
 
     var ajax = new XMLHttpRequest();
-    ajax.open("POST", "../php/teacher_get_class_to_update.php",true);
     ajax.onreadystatechange = function()
     {
         if(this.readyState == 4 && this.status == 200)
         { 
             var retval = JSON.parse(ajax.responseText);
-            description.value = retval['description'];
-            Enrollment.value = retval['enroll_key'];
+            //console.log(retval);
+            //console.log(ajax.responseText);
+            var text = retval[0].description;
+            $('#description').summernote('code',text);
+            Enrollment.value = retval[0].enroll_key;
         }
     }
+    ajax.open("POST", "../php/teacher_get_class_to_update.php",true);
     ajax.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    ajax.send("id=" + cid);
+    ajax.send("id="+cid);
 }
 
 

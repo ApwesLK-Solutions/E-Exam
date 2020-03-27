@@ -1,6 +1,6 @@
 <?php
-
-    if(isset($_POST['id']))
+    include 'database.php';
+    if(isset($_POST['id']) && session_start())
     {
         $cmd = $conn->prepare("SELECT description , enroll_key FROM class WHERE id = ? and owner = ?");
         $id = $_POST['id'];
