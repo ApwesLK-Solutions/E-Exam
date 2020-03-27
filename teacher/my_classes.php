@@ -1,3 +1,4 @@
+<?php include '../php/session.php'; ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -298,6 +299,8 @@
 <script src="../plugins/datatables-bs4/js/dataTables.bootstrap4.js"></script>
 <!-- Bootstrap Switch -->
 <script src="../plugins/bootstrap-switch/js/bootstrap-switch.min.js"></script>
+
+<script src="../js/teacher_my_class.js"></script>
 <script>
   $(function () {
     $("#example1").DataTable();

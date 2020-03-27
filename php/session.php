@@ -5,7 +5,7 @@
     if(session_start())
     {
         $username = $_SESSION['mobile'];
-        $password = $_SESSION['password'];
+        $password = $_SESSION['hash'];
         $cmd = $conn->prepare('SELECT * FROM `users` WHERE mobile = ?');
         $cmd->bind_param("s",$username);
         $cmd->execute();

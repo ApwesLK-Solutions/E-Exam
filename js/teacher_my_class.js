@@ -1,5 +1,5 @@
 
-document.forms.add_class.onchange = function(e)
+/*document.forms.add_class.onchange = function(e)
 {
     e.preventDefault();
 
@@ -33,4 +33,10 @@ document.forms.add_class.onchange = function(e)
         }
         request.send("ekeyvisible=" + ekeyvisible); 
     
+}
+*/
+
+function update_visibility(e)
+{
+    console.log(e.value);
 }
