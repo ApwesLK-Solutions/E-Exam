@@ -36,7 +36,7 @@
         <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="../index.html" class="nav-link">Home</a>
+        <a href="../index.php" class="nav-link">Home</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
         <a href="#" class="nav-link">Contact</a>
@@ -154,7 +154,7 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="../index.html" class="brand-link">
+    <a href="../index.php" class="brand-link">
       <img src="../img/AdminLTELogo.png"
            alt="AdminLTE Logo"
            class="brand-image img-circle elevation-3"
@@ -180,7 +180,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item">
-            <a href="./index.html" class="nav-link">
+            <a href="./index.php" class="nav-link">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
@@ -198,13 +198,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="add_class.html" class="nav-link active">
+                <a href="add_class.php" class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Add New Class</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="my_classes.html" class="nav-link">
+                <a href="my_classes.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>My Classes</p>
                 </a>
@@ -230,7 +230,7 @@
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+              <li class="breadcrumb-item"><a href="index.php">Home</a></li>
               <li class="breadcrumb-item active">Add Classes</li>
             </ol>
           </div>

@@ -157,7 +157,7 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="index.html" class="brand-link">
+    <a href="index.php" class="brand-link">
       <img src="../img/AdminLTELogo.png" alt="E-Exam Logo" class="brand-image img-circle elevation-3"
            style="opacity: .8">
       <span class="brand-text font-weight-light">E-Exam</span>
@@ -181,7 +181,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item">
-            <a href="./index.html" class="nav-link active">
+            <a href="./index.php" class="nav-link active">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
@@ -199,7 +199,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="add_class.html" class="nav-link">
+                <a href="add_class.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Add New Class</p>
                 </a>
