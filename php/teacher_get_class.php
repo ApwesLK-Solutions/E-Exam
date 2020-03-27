@@ -24,7 +24,7 @@
             {
                 echo "<td><input name='ekey_visible' onchange='update_visibility(this);' type='checkbox' value='".$row['id']."' name='my-checkbox' data-bootstrap-switch data-off-color='danger' data-on-color='success'></td>";
             }
-            echo "<td class='text-center'><a rel='tooltip' title='View class' class='btn btn-link' href='javascript:void(0)'><i class='fa fa-eye'></i></a><a rel='tooltip 'title='Edit Class Info' class='btn btn-link' href='javascript:void(0)'><i class='fa fa-edit'></i></a><a rel='tooltip' title='Remove Class' class='btn btn-link' href='javascript:void(0)'><i class='fa fa-trash-alt'></i></a></td>";
+            echo "<td class='text-center'><a rel='tooltip' title='View class' class='btn btn-link' href='javascript:void(0)'><i class='fa fa-eye'></i></a><a rel='tooltip ' id='".$row['id']."' title='Edit Class Info' class='btn btn-link' data-toggle='modal' data-target='#modal-default' href='javascript:void(0)'><i class='fa fa-edit'></i></a><a rel='tooltip' title='Remove Class' class='btn btn-link' href='javascript:void(0)'><i class='fa fa-trash-alt'></i></a></td>";
             echo "</tr>";
         }
     }

@@ -22,6 +22,11 @@
   <link rel="stylesheet" href="../plugins/icheck-bootstrap/icheck-bootstrap.min.css">
   <!-- Toastr -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.css" rel="stylesheet">
+  <!-- summernote -->
+  <link rel="stylesheet" href="../plugins/summernote/summernote-bs4.css">
+  <!-- Select2 -->
+  <link rel="stylesheet" href="../plugins/select2/css/select2.min.css">
+  <link rel="stylesheet" href="../plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
 </head>
 <body class="hold-transition sidebar-mini">
 <!-- Site wrapper -->
@@ -265,6 +270,44 @@
             </table>
           </div>
         </div>
+        <!--Modal  -->
+        <div class="modal fade" id="modal-default">
+        <div class="modal-dialog">
+          <div class="modal-content">
+          <form id="update_class" action="" method="POST">
+            <div class="modal-header">
+              <h4 class="modal-title">Update Class Info</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <label>Discription about subject</label>
+                        <textarea class="textarea" id="description" name="description" placeholder="Place discription about subject, class time and necessary details" style="width:100%; height: 500px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                      <label>Enrollment Key.</label>
+                      <input type="text" class="form-control" id="enroll" name="enroll" placeholder="Enrollment Key" > 
+                      <span class="form-group-addon"><input type="checkbox" id="public" name="public"> Show to the Public</span>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <div class="modal-footer justify-content-between">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-primary">Save changes</button>
+            </div>
+          </form>
+          </div>
+          <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+      </div>
         <!-- /.card-body -->
       </div>
       <!-- /.card -->
@@ -305,6 +348,10 @@
 <script src="../plugins/bootstrap-switch/js/bootstrap-switch.min.js"></script>
 <!-- toastr -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+!-- Select2 -->
+<script src="../plugins/select2/js/select2.full.min.js"></script>
+<!-- Summernote -->
+<script src="../plugins/summernote/summernote-bs4.min.js"></script>
 
 <script src="../js/teacher_my_class.js"></script>
 <script>
@@ -322,6 +369,23 @@
   $("input[data-bootstrap-switch]").each(function(){
       $(this).bootstrapSwitch('state', $(this).prop('checked'));
     });
+</script>
+<script>
+  $(function () {
+    // Summernote
+    $('.textarea').summernote()
+  })
+</script>
+<script>
+  $(function () {
+    //Initialize Select2 Elements
+    $('.select2').select2()
+
+    //Initialize Select2 Elements
+    $('.select2bs4').select2({
+      theme: 'bootstrap4'
+    })
+  })
 </script>
 </body>
 </html>
