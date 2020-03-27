@@ -246,22 +246,24 @@
         </div>
         <!-- /.card-header -->
         <div class="card-body">
-          <table id="example1" class="table table-bordered table-hover text-nowrap">
-            <thead>
-            <tr>
-              <th>ID</th>
-              <th>Grade</th>
-              <th>Subject</th>
-              <th>Institute</th>
-              <th>Enrollment Key</th>
-              <th>Key Visibility</th>
-              <th data-field="actions" class="td-actions text-center">Actions</th>
-            </tr>
-            </thead>
-            <tbody>
-            <?php include '../php/teacher_get_class.php';?>
-            </tfoot>
-          </table>
+          <div class="card-body table-responsive p-0">
+            <table id="example1" class="table table-bordered table-hover text-nowrap">
+              <thead>
+              <tr>
+                <th>ID</th>
+                <th>Grade</th>
+                <th>Subject</th>
+                <th>Institute</th>
+                <th>Enrollment Key</th>
+                <th>Key Visibility</th>
+                <th data-field="actions" class="td-actions text-center">Actions</th>
+              </tr>
+              </thead>
+              <tbody>
+              <?php include '../php/teacher_get_class.php';?>
+              </tfoot>
+            </table>
+          </div>
         </div>
         <!-- /.card-body -->
       </div>
