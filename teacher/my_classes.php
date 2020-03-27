@@ -284,6 +284,7 @@
             <div class="modal-body">
                 
                 <div class="row">
+                <input type="text" class="form-control" id="cid" value="" name="cid" hidden="true" > 
                   <div class="col-md-12">
                     <div class="form-group">
                       <label>Discription about subject</label>
@@ -352,8 +353,9 @@
 <script src="../plugins/select2/js/select2.full.min.js"></script>
 <!-- Summernote -->
 <script src="../plugins/summernote/summernote-bs4.min.js"></script>
-
+<!--APP -->
 <script src="../js/teacher_my_class.js"></script>
+
 <script>
   $(function () {
     $("#example1").DataTable();
