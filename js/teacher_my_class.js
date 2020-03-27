@@ -46,7 +46,6 @@ function update_visibility(e)
         }
         request.send("id=" + class_id + "&visibility=" + status); 
     }
-    
 }
 
 
