@@ -1,5 +1,7 @@
 <?php
 
+    session_start();
+    include('database.php');
     if(isset($_POST['id']))
     {
         $cmd = $conn->prepare("SELECT description , enroll_key FROM class WHERE id = ? and owner = ?");
