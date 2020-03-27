@@ -256,39 +256,7 @@
             </tr>
             </thead>
             <tbody>
-            <tr>
-              <td>Trident</td>
-              <td>Internet
-                Explorer 4.0
-              </td>
-              <td>Win 95+</td>
-              <td> 4</td>
-              <td>X</td>
-              <td><input type="checkbox" name="my-checkbox" checked data-bootstrap-switch data-off-color="danger" data-on-color="success"></td>
-              <td class="text-center"><a rel="tooltip" title="View class" class="btn btn-link" href="javascript:void(0)"><i class="fa fa-eye"></i></a><a rel="tooltip" title="Edit Class Info" class="btn btn-link" href="javascript:void(0)"><i class="fa fa-edit"></i></a><a rel="tooltip" title="Remove Class" class="btn btn-link" href="javascript:void(0)"><i class="fa fa-trash-alt"></i></a></td>
-            </tr>
-            <tr>
-              <td>Trident</td>
-              <td>Internet
-                Explorer 4.0
-              </td>
-              <td>Win 95+</td>
-              <td> 4</td>
-              <td>X</td>
-              <td><input type="checkbox" name="my-checkbox" checked data-bootstrap-switch data-off-color="danger" data-on-color="success"></td>
-              <td class="text-center"><a rel="tooltip" title="View" class="btn btn-link" href="javascript:void(0)"><i class="fa fa-eye"></i></a><a rel="tooltip" title="Edit" class="btn btn-link" href="javascript:void(0)"><i class="fa fa-edit"></i></a><a rel="tooltip" title="Remove" class="btn btn-link" href="javascript:void(0)"><i class="fa fa-trash-alt"></i></a></td>
-            </tr>
-            </tbody>
-            <tfoot>
-            <tr>
-              <th>ID</th>
-              <th>Grade</th>
-              <th>Subject</th>
-              <th>Institute</th>
-              <th>Enrollment Key</th>
-              <th>Key Visibility</th>
-              <th data-field="actions" class="td-actions text-center">Actions</th>
-            </tr>
+            <?php include '../php/teacher_get_class.php';?>
             </tfoot>
           </table>
         </div>
