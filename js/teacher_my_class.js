@@ -6,9 +6,7 @@ function _(id)
 
 function update_visibility(e)
 {
-    var class_id = e.value;
-    var status;
-    if(e.checked)
+    if(document.readyState == "complete")
     {
         status = 1;
     }
@@ -41,8 +39,8 @@ function update_visibility(e)
                 }
             }
         }
+        request.send("id=" + class_id + "&visibility=" + status); 
     }
-    request.send("id=" + class_id + "&visibility=" + status); 
 }
 
 
