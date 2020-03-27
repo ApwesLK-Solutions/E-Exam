@@ -53,17 +53,21 @@ function prepare_update_class(element)
 {
     var cid = element.id;
     _('cid').value = cid;
+    var description = _('description');
+    var Enrollment =_('enroll');
 
     var ajax = new XMLHttpRequest();
-    ajax.open("POST", "../php/get_teacher_class_by_id.php",true);
-    ajax.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    ajax.open("POST", "../php/teacher_get_class_to_update.php",true);
     ajax.onreadystatechange = function()
     {
         if(this.readyState == 4 && this.status == 200)
         { 
             var retval = JSON.parse(ajax.responseText);
+            description.value = retval['description'];
+            Enrollment.value = retval['enroll_key'];
         }
     }
+    ajax.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     ajax.send("id=" + cid);
 }
 
@@ -101,7 +105,7 @@ document.forms.update_class.onsubmit = function(e)
             ekeyvisible = 0;
         }
         var request = new XMLHttpRequest();
-        request.open("POST","../php/teacher_update_class.php",true);
+        request.open("POST","../php/teacher_update_my_class.php",true);
         request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
         request.onreadystatechange = function()
         {
