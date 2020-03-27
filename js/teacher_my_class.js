@@ -6,7 +6,7 @@ function _(id)
 
 function update_visibility(e)
 {
-    if(document.readyState == 4)
+    if(document.readyState == "complete")
     {
         var class_id = e.value;
         var status;
@@ -46,10 +46,7 @@ function update_visibility(e)
         }
         request.send("id=" + class_id + "&visibility=" + status); 
     }
-    else
-    {
-        alert('This dont give a fuck')
-    }
+    
 }
 
 
