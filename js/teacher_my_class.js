@@ -48,5 +48,93 @@ function update_visibility(e)
     }
 }
 
+//prepare update class info
+function prepare_update_class(element)
+{
+    var cid = element.id;
+    _('cid').value = cid;
+
+    var ajax = new XMLHttpRequest();
+    ajax.open("POST", "../php/get_teacher_class_by_id.php",true);
+    ajax.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    ajax.onreadystatechange = function()
+    {
+        if(this.readyState == 4 && this.status == 200)
+        { 
+            var retval = JSON.parse(ajax.responseText);
+        }
+    }
+    ajax.send("id=" + cid);
+}
 
 
+//update class info
+document.forms.update_class.onsubmit = function(e)
+{
+    e.preventDefault();
+    if( _('description').value == "" || _('enroll').value == "")
+    {
+        toastr.error("Please Fill All the Fields..");
+    }
+    else if(_("cid").value == "")
+    {
+        toastr.error("Data not Loaded correctly. Please reload the page..");
+    }
+    else if(_("description").value == "")
+    {
+        toastr.error("please enter discription about class and subject..");
+    }
+    else if(_("enroll").value == "")
+    {
+        toastr.error("Please enter enrollment key..");
+    }
+    
+    else
+    {
+        var ekeyvisible;
+        if(_('public').checked)
+        {
+            ekeyvisible = 1;
+        }
+        else
+        {
+            ekeyvisible = 0;
+        }
+        var request = new XMLHttpRequest();
+        request.open("POST","../php/teacher_update_class.php",true);
+        request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        request.onreadystatechange = function()
+        {
+            if(request.readyState == 4 && request.status == 200)
+            {
+                var result = request.responseText;
+                if(result == "SUCCESS")
+                {
+                    toastr.success("Class info updated successfully..");
+                    setTimeout(() => {location.reload(); }, 2000);
+                }
+                else if(result == "FAILED")
+                {
+                    toastr.error("class info update Failed Error Was : " + request.responseText);
+                    
+                }
+                
+                else if(result == "POSTERR")
+                {
+                    toastr.error("Bad Request Contact Site Admin..");
+                }
+                else
+                {
+                    toastr.error("response was : " + request.responseText);
+                }
+            }
+        }
+        request.send("id=" + _("cid").value + "&description=" + _("description").value + "&ekey=" + _("enroll").value + "&ekeyvisible=" + ekeyvisible); 
+    }
+}
+
+function delete_class(element)
+{
+    var cid = element.id;
+    
+}

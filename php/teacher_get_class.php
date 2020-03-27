@@ -24,7 +24,10 @@
             {
                 echo "<td><input name='ekey_visible' onchange='update_visibility(this);' type='checkbox' value='".$row['id']."' name='my-checkbox' data-bootstrap-switch data-off-color='danger' data-on-color='success'></td>";
             }
-            echo "<td class='text-center'><a rel='tooltip' title='View class' class='btn btn-link' href='javascript:void(0)'><i class='fa fa-eye'></i></a><a rel='tooltip ' id='".$row['id']."' title='Edit Class Info' class='btn btn-link' data-toggle='modal' data-target='#modal-default' href='javascript:void(0)'><i class='fa fa-edit'></i></a><a rel='tooltip' title='Remove Class' class='btn btn-link' href='javascript:void(0)'><i class='fa fa-trash-alt'></i></a></td>";
+            echo "<td class='text-center'>";
+            echo "<button type='button' id='".$row['id']."' rel='tooltip' data-placement='left' title='View Class' class='btn btn-link btn-icon'><i class='fa fa-eye'></i></button>";
+            echo "<button type='button' id='".$row['id']."' onclick='prepare_update_class(this);' rel='tooltip' data-placement='left' title='Edit Class Info' class='btn btn-link btn-icon'data-toggle='modal' data-target='#modal-default'><i class='fa fa-edit'></i></button>";
+            echo "<button type='button' id='".$row['id']."' onclick='delete_class(this);' rel='tooltip' data-placement='left' title='Remove Class' class='btn btn-link btn-icon'><i class='fa fa-trash-alt'></i></button>";
             echo "</tr>";
         }
     }
