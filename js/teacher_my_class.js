@@ -1,16 +1,22 @@
-
-/*document.forms.add_class.onchange = function(e)
+function _(id)
 {
-    e.preventDefault();
+    return document.getElementById(id);
+}
 
-        var ekeyvisible;
-        if(_('public').checked)
+
+function update_visibility(e)
+{
+    if(document.readyState == 4)
+    {
+        var class_id = e.value;
+        var status;
+        if(e.checked)
         {
-            ekeyvisible = 1;
+            status = 1;
         }
         else
         {
-            ekeyvisible = 0;
+            status = 0;
         }
         var request = new XMLHttpRequest();
         request.open("POST","../php/teacher_update_class_enroll_key_visibility.php",true);
@@ -22,21 +28,29 @@
                 var result = request.responseText;
                 if(result == "SUCCESS")
                 {
-                    toastr.success("You have been successfully changed enrollment ey visibility..");
+                    toastr.success("You have been successfully changed enrollment key visibility..");
                 }
                 else if(result == "FAILED")
                 {
                     toastr.error("Enrollment key visibility change failed..");
-                    
+                    if(status == 1)
+                    {
+                        e.checked = false;
+                    }
+                    else
+                    {
+                        e.checked = true;
+                    }
                 }
             }
         }
-        request.send("ekeyvisible=" + ekeyvisible); 
-    
+        request.send("id=" + class_id + "&visibility=" + status); 
+    }
+    else
+    {
+        alert('This dont give a fuck')
+    }
 }
-*/
 
-function update_visibility(e)
-{
-    console.log(e.value);
-}
+
+
