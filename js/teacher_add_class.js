@@ -83,11 +83,11 @@ function load_institutes()
 document.forms.add_class.onsubmit = function(e)
 {
     e.preventDefault();
-    if(_('grade').value == "" || _('subject').value == "" || _('institute').value == "" || _('discription').value == "" || _('enroll').value == "")
+    if(_('grade').value == "" || _('subject').value == "" || _('institute').value == "" || _('description').value == "" || _('enroll').value == "")
     {
         toastr.error("Please Fill All the Fields..");
     }
-    else if(_("discription").value == "")
+    else if(_("description").value == "")
     {
         toastr.error("please enter discription about class and subject");
     }
@@ -97,8 +97,17 @@ document.forms.add_class.onsubmit = function(e)
     }
     else
     {
+        var ekeyvisible;
+        if(_('public').checked)
+        {
+            ekeyvisible = 1;
+        }
+        else
+        {
+            ekeyvisible = 0;
+        }
         var request = new XMLHttpRequest();
-        request.open("POST","php/add_class.php",true);
+        request.open("POST","../php/teacher_add_class.php",true);
         request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
         request.onreadystatechange = function()
         {
@@ -111,22 +120,20 @@ document.forms.add_class.onsubmit = function(e)
                 }
                 else if(result == "FAILED")
                 {
-                    toastr.error("New Class Adding Failed..");
+                    toastr.error("New Class Addition Failed Error Was : " + request.responseText);
                     
                 }
                 
                 else if(result == "POSTERR")
                 {
                     toastr.error("Bad Request Contact Site Admin..");
-                    
                 }
                 else
                 {
                     toastr.error("response was : " + request.responseText);
-                    grecaptcha.reset();
                 }
             }
         }
-        request.send("grade=" + _("grade").value + "&subject=" + _("subject").value + "&discription=" + _("discription").value + "&institute=" + _("institute").value + "&enroll=" + _("enroll").value); 
+        request.send("grade=" + _("grade").value + "&subject=" + _("subject").value + "&description=" + _("description").value + "&institute=" + _("institute").value + "&ekey=" + _("enroll").value + "&ekeyvisible=" + ekeyvisible); 
     }
 }

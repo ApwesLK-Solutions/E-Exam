@@ -23,17 +23,17 @@ document.forms.login.onsubmit = function(e)
                 if(result == "ADMIN")
                 {
                     toastr.success("Login Success. Redirecting to Admin Dashboard...");
-                    setTimeout(() => {window.location.replace("admin_dashboard.php"); }, 3000);
+                    setTimeout(() => {window.location.replace("admin/"); }, 3000);
                 }
                 else if(result == "STUDENT")
                 {
                     toastr.success("Login Success. Redirecting to Student Dashboard...");
-                    setTimeout(() => {window.location.replace("student_dashboard.php"); }, 3000);
+                    setTimeout(() => {window.location.replace("student/"); }, 3000);
                 }
                 else if(result == "TEACHER")
                 {
                     toastr.success("Login Success. Redirecting to Teacher Dashboard...");
-                    setTimeout(() => {window.location.replace("teacher_dashboard.php"); }, 3000);
+                    setTimeout(() => {window.location.replace("teacher/"); }, 3000);
                 }
                 else if(result == "POSTERR")
                 {
