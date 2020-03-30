@@ -355,6 +355,8 @@
 <script src="../plugins/summernote/summernote-bs4.min.js"></script>
 <!--APP -->
 <script src="../js/teacher_my_class.js"></script>
+<!-- Sweet alert-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
 
 <script>
   $(function () {

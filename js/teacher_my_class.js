@@ -157,27 +157,30 @@ function delete_class(element)
         dangerMode: true,
     }).then(function (result)
         {
+            
           if (result.value)
           {
-            swal("Launch not Deleted!");
+             
+            toastr.success("Nothing changed..");
           } 
           else 
           {
           	var req = new XMLHttpRequest();
-			req.open("POST","assets/php/delete_launches.php",true);
+			req.open("POST","../php/teacher_delete_my_class.php",true);
 			req.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
 			req.onreadystatechange = function()
 			{
 				if(req.readyState == 4 && req.status == 200)
 				{
 					var result = req.responseText;
-					if(result == 'OK')
+					if(result == 'SUCCESS')
 					{
-						swal({ title: "Sucess",text: "Launch Successfully Deleted",icon: "success"}).then(function(){location.reload();});
+						toastr.success("Class Deleted Successfully...");
+                        setTimeout(() => {location.reload(); }, 2000);
 					}
 					else
 					{
-						swal({ title: "Error",text: "Delete Unsuccessfull.Please try again later..", icon:"error"});
+						toastr.error("class Deletion Failed Error Was : " + req.responseText);
 					}
 				
 				}	
