@@ -142,6 +142,49 @@ document.forms.update_class.onsubmit = function(e)
 
 function delete_class(element)
 {
-    var cid = element.id;
-    
+	var id = element.id;
+	if(id === null || id === "")
+	{
+		toastr.success("Nothing changed..");
+	}
+	else
+	{
+        swal({
+        title: "Are you sure?",
+        text: "Once deleted, you will not be able to recover this Data!",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+    }).then(function (result)
+        {
+          if (result.value)
+          {
+            swal("Launch not Deleted!");
+          } 
+          else 
+          {
+          	var req = new XMLHttpRequest();
+			req.open("POST","assets/php/delete_launches.php",true);
+			req.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+			req.onreadystatechange = function()
+			{
+				if(req.readyState == 4 && req.status == 200)
+				{
+					var result = req.responseText;
+					if(result == 'OK')
+					{
+						swal({ title: "Sucess",text: "Launch Successfully Deleted",icon: "success"}).then(function(){location.reload();});
+					}
+					else
+					{
+						swal({ title: "Error",text: "Delete Unsuccessfull.Please try again later..", icon:"error"});
+					}
+				
+				}	
+			}
+			req.send("id="+id);
+			
+          }
+    	});
+	}
 }
