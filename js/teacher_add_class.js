@@ -117,6 +117,8 @@ document.forms.add_class.onsubmit = function(e)
                 if(result == "SUCCESS")
                 {
                     toastr.success("New Class Has Been Added..");
+                    setTimeout(() => {window.location.replace("my_classes.php"); }, 1500);
+
                 }
                 else if(result == "FAILED")
                 {
