@@ -142,6 +142,52 @@ document.forms.update_class.onsubmit = function(e)
 
 function delete_class(element)
 {
-    var cid = element.id;
-    
+	var id = element.id;
+	if(id === null || id === "")
+	{
+		toastr.success("Nothing changed..");
+	}
+	else
+	{
+        swal({
+        title: "Are you sure?",
+        text: "Once deleted, you will not be able to recover this Data!",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+    }).then(function (result)
+        {
+            
+          if (result.value)
+          {
+             
+            toastr.success("Nothing changed..");
+          } 
+          else 
+          {
+          	var req = new XMLHttpRequest();
+			req.open("POST","../php/teacher_delete_my_class.php",true);
+			req.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+			req.onreadystatechange = function()
+			{
+				if(req.readyState == 4 && req.status == 200)
+				{
+					var result = req.responseText;
+					if(result == 'SUCCESS')
+					{
+						toastr.success("Class Deleted Successfully...");
+                        setTimeout(() => {location.reload(); }, 2000);
+					}
+					else
+					{
+						toastr.error("class Deletion Failed Error Was : " + req.responseText);
+					}
+				
+				}	
+			}
+			req.send("id="+id);
+			
+          }
+    	});
+	}
 }
