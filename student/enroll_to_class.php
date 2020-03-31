@@ -282,7 +282,7 @@
           </form>
         <!-- /.card-body -->
         <div class="card-footer mt-3">
-        <div class="row">
+        <div class="row" id="classes">
               <div class="col-md-4">
                 <!-- Widget: user widget style 1 -->
                 <div class="card card-widget widget-user">
