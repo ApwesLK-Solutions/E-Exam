@@ -272,7 +272,7 @@
                 <div class="form-group">
                   <label>Select Teacher(Optional)</label>
                   <select class="form-control select2" id="teacher" name="teacher" data-placeholder="Select a teacher" style="width: 100%;" >
-                  </select>
+                </select>
                 </div>
                 <div class="col-3 float-right">
                   <button type="submit" class="btn btn-primary btn-block ">Filter</button>
@@ -283,58 +283,7 @@
         <!-- /.card-body -->
         <div class="card-footer mt-3">
         <div class="row" id="classes">
-              <div class="col-md-4">
-                <!-- Widget: user widget style 1 -->
-                <div class="card card-widget widget-user">
-                  <!-- Add the bg color to the header using any of the bg-* classes -->
-                  <div class="widget-user-header bg-warning">
-                    <h3 class="widget-user-username">Alexander Pierce</h3>
-                    <h5 class="widget-user-desc mb-0 text-bold">Founder & CEO</h5>
-                    <h6 class="widget-user-desc ">SIGMA- BANDARWELA</h6>
-                  </div>
-                  <div class="widget-user-image mt-3">
-                    <img class="img-circle elevation-2" src="../img/user1-128x128.jpg" alt="User Avatar">
-                  </div>
-                  <div class="card-footer">
-                    <div class="row">
-                      <div class="col-sm-4 border-right border-bottom">
-                        <div class="description-block">
-                          <h5 class="description-header">4</h5>
-                          <span class="description-text">Institute</span>
-                        </div>
-                        <!-- /.description-block -->
-                      </div>
-                      <!-- /.col -->
-                      <div class="col-sm-4 border-right border-bottom">
-                        <div class="description-block">
-                          <h5 class="description-header">13,000</h5>
-                          <span class="description-text">Students</span>
-                        </div>
-                        <!-- /.description-block -->
-                      </div>
-                      <!-- /.col -->
-                      <div class="col-sm-4 border-bottom">
-                        <div class="description-block">
-                          <h5 class="description-header">35</h5>
-                          <span class="description-text">Units</span>
-                        </div>
-                        <!-- /.description-block -->
-                      </div>
-                      <div class="col-sm-12">
-                        <div class="description-block">
-                          <div class="text-center">
-                            <button class="btn btn-warning" data-toggle="modal" data-target="#modal-success"><i class="fa fa-heart" ></i> Enroll Now</button>
-                          </div>
-                        </div>
-                        <!-- /.description-block -->
-                      </div>
-                      <!-- /.col -->
-                    </div>
-                    <!-- /.row -->
-                  </div>
-                </div>
-              <!-- /.widget-user -->
-              </div>
+              
 
               
             </div>
