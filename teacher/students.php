@@ -1,3 +1,4 @@
+<?php include '../php/session.php'; ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,10 +19,10 @@
   <link rel="stylesheet" href="../plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="../css/adminlte.min.css">
+   <!-- DataTables -->
+   <link rel="stylesheet" href="../plugins/datatables-bs4/css/dataTables.bootstrap4.css">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
-  <!-- summernote -->
-  <link rel="stylesheet" href="../plugins/summernote/summernote-bs4.css">
   <!-- Toastr -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.css" rel="stylesheet">
 </head>
@@ -188,8 +189,8 @@
             </a>
           </li>
           <!-- class nav start-->
-          <li class="nav-item has-treeview menu-open">
-            <a href="#" class="nav-link active">
+          <li class="nav-item has-treeview menu-close">
+            <a href="#" class="nav-link">
               <i class="nav-icon fas fa-copy"></i>
               <p>
                 Classes
@@ -198,13 +199,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="add_class.php" class="nav-link active">
+                <a href="add_class.php" class="nav-link ">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Add New Class</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="my_classes.php" class="nav-link">
+                <a href="my_classes.php" class="nav-link ">
                   <i class="far fa-circle nav-icon"></i>
                   <p>My Classes</p>
                 </a>
@@ -213,7 +214,7 @@
           </li>
           <!-- class nav end-->
           <li class="nav-item">
-            <a href="./students.php" class="nav-link">
+            <a href="./students.php" class="nav-link active">
               <i class="nav-icon fas fa-user-graduate"></i>
               <p>
                Students
@@ -234,12 +235,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Add Classes</h1>
+            <h1>My Students</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-              <li class="breadcrumb-item active">Add Classes</li>
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">My Students</li>
             </ol>
           </div>
         </div>
@@ -248,13 +249,15 @@
 
     <!-- Main content -->
     <section class="content">
+
       <!-- Default box -->
       <div class="card">
         <div class="card-header">
-          <h3 class="card-title">Add New Class</h3>
+          <h3 class="card-title">Filter By</h3>
         </div>
+        <!-- /.card-header -->
         <div class="card-body">
-          <form id="add_class" action="" method="POST">
+          <form id="filter_student" action="" method="POST">
             <div class="row">
               <div class="col-md-12">
                 <div class="form-group">
@@ -268,37 +271,82 @@
                   <select class="form-control select2" id="subject" name="subject" data-placeholder="Select a Subject" style="width: 100%;" >
                   </select>
                 </div>
-                
-                <div class="form-group">
-                  <label>Discription about subject</label>
-                    <textarea class="textarea" id="description" name="description" placeholder="Place discription about subject, class time and necessary details" style="width:100%; height: 500px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
-                </div>
 
                 <div class="form-group">
                   <label>Select Institute</label>
-                  <select class="form-control select2"  id="institute" name="institute" data-placeholder="Select a Institute" style="width: 100%;">
+                  <select class="form-control select2" id="institute" name="institute" data-placeholder="Select Institute" style="width: 100%;" >
                   </select>
-                </div>
-                
-                <div class="form-group">
-                  <label>Enrollment Key (This Key should provide to students to access the subject).</label>
-                  <input type="text" class="form-control" id="enroll" name="enroll" placeholder="Enrollment Key" > 
-                  <span class="form-group-addon"><input type="checkbox" id="public" name="public"> Show to the Public</span>
-                </div>
-                <div class="col-3 float-right">
-                  <button type="submit" class="btn btn-primary btn-block ">Add class</button>
                 </div>
               </div>
             </div>
           </form>
+          <div class="card-body table-responsive p-0">
+            <table id="example1" class="table table-bordered table-hover text-nowrap">
+              <thead>
+              <tr>
+                <th>ID</th>
+                <th>Grade</th>
+                <th>Subject</th>
+                <th>Name</th>
+                <th>Institute</th>
+                <th data-field="actions" class="td-actions text-center">Actions</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                  <td>01</td>
+                  <td>12</td>
+                  <td>physics</td>
+                  <td>Chammod priyamal</td>
+                  <td>sakya nugegoda</td>
+                  <td class="text-center"><button type="button"   rel="tooltip" data-placement="left" title="Unenroll Student" class="btn btn-link btn-icon"><i class="fa fa-trash-alt"></i></button></td>
+                </tr>
+            </table>
+          </div>
         </div>
+        <!--Modal  -->
+        <div class="modal fade" id="modal-default">
+        <div class="modal-dialog">
+          <div class="modal-content">
+          <form id="update_class" action="" method="POST">
+            <div class="modal-header">
+              <h4 class="modal-title">Update Class Info</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                
+                <div class="row">
+                <input type="text" class="form-control" id="cid" value="" name="cid" hidden="true" > 
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <label>Discription about subject</label>
+                        <textarea class="textarea" id="description" name="description" placeholder="Place discription about subject, class time and necessary details" style="width:100%; height: 500px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                      <label>Enrollment Key.</label>
+                      <input type="text" class="form-control" id="enroll" name="enroll" placeholder="Enrollment Key" > 
+                      <span class="form-group-addon"><input type="checkbox" id="public" name="public"> Show to the Public</span>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <div class="modal-footer justify-content-between">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-primary">Save changes</button>
+            </div>
+          </form>
+          </div>
+          <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+      </div>
         <!-- /.card-body -->
-        <div class="card-footer">
-          Footer
-        </div>
-        <!-- /.card-footer-->
       </div>
       <!-- /.card -->
+
     </section>
     <!-- /.content -->
   </div>
@@ -328,19 +376,37 @@
 <script src="../js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="../js/demo.js"></script>
+<!-- DataTables -->
+<script src="../plugins/datatables/jquery.dataTables.js"></script>
+<script src="../plugins/datatables-bs4/js/dataTables.bootstrap4.js"></script>
+<!-- Bootstrap Switch -->
+<script src="../plugins/bootstrap-switch/js/bootstrap-switch.min.js"></script>
+<!-- toastr -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 <!-- Select2 -->
 <script src="../plugins/select2/js/select2.full.min.js"></script>
 <!-- Summernote -->
 <script src="../plugins/summernote/summernote-bs4.min.js"></script>
-<!-- toastr -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 <!-- APP-->
 <script src="../js/teacher_add_class.js"></script>
+<!-- Sweet alert-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+
 <script>
   $(function () {
-    // Summernote
-    $('.textarea').summernote()
-  })
+    $("#example1").DataTable();
+    $('#example2').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false,
+    });
+  });
+  $("input[data-bootstrap-switch]").each(function(){
+      $(this).bootstrapSwitch('state', $(this).prop('checked'));
+    });
 </script>
 <script>
   $(function () {

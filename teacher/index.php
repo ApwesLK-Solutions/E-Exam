@@ -213,6 +213,14 @@
             </ul>
           </li>
           <!-- class nav end-->
+          <li class="nav-item">
+            <a href="./students.php" class="nav-link">
+              <i class="nav-icon fas fa-user-graduate"></i>
+              <p>
+                Students
+              </p>
+            </a>
+          </li>
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
