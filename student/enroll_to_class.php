@@ -413,7 +413,7 @@
 <!-- toastr -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 <!-- APP-->
-<script src="../js/teacher_add_class.js"></script>
+<script src="../js/student_enroll_class.js"></script>
 <script>
   $(function () {
     // Summernote
