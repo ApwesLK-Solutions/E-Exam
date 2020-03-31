@@ -292,9 +292,9 @@
         <!-- /.card-footer-->
       </div>
       <!-- modal -->
-      <div class="modal fade" id="modal-success">
+      <div class="modal fade" id="modal-warning">
         <div class="modal-dialog">
-          <div class="modal-content bg-success">
+          <div class="modal-content bg-warning">
             <div class="modal-header">
               <h4 class="modal-title">Enroll to Class</h4>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -306,7 +306,7 @@
                     <input type="text" class="form-control" id="cid" name="cid" hidden="true" placeholder="Enrollment Key" > 
                   </div>
                   <div class="input-group mb-3">
-                    <input id="enroll_key" type="password" class="form-control" placeholder="enrollment key">
+                    <input id="enroll_key" name="enroll_key" type="password" class="form-control" placeholder="enrollment key">
                     <div class="input-group-append">
                       <div class="input-group-text">
                         <span class="fas fa-lock"></span>
