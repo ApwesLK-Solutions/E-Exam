@@ -287,7 +287,7 @@
                 <!-- Widget: user widget style 1 -->
                 <div class="card card-widget widget-user">
                   <!-- Add the bg color to the header using any of the bg-* classes -->
-                  <div class="widget-user-header bg-info">
+                  <div class="widget-user-header bg-warning">
                     <h3 class="widget-user-username">Alexander Pierce</h3>
                     <h5 class="widget-user-desc">Founder & CEO</h5>
                   </div>
@@ -322,7 +322,7 @@
                       <div class="col-sm-12">
                         <div class="description-block">
                           <div class="text-center">
-                            <button class="btn btn-primary" data-toggle="modal" data-target="#modal-success"><i class="fa fa-heart" ></i> Enroll Now</button>
+                            <button class="btn btn-warning" data-toggle="modal" data-target="#modal-success"><i class="fa fa-heart" ></i> Enroll Now</button>
                           </div>
                         </div>
                         <!-- /.description-block -->
@@ -413,7 +413,7 @@
 <!-- toastr -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 <!-- APP-->
-<script src="../js/teacher_add_class.js"></script>
+<script src="../js/student_enroll_class.js"></script>
 <script>
   $(function () {
     // Summernote
