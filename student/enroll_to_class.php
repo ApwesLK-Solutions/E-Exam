@@ -193,7 +193,7 @@
             <a href="#" class="nav-link active">
               <i class="nav-icon fas fa-copy"></i>
               <p>
-                Classes
+                My Classes
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
@@ -270,7 +270,7 @@
                   </select>
                 </div>
                 <div class="form-group">
-                  <label>Select Teacher</label>
+                  <label>Select Teacher(Optional)</label>
                   <select class="form-control select2" id="teacher" name="teacher" data-placeholder="Select a teacher" style="width: 100%;" >
                   </select>
                 </div>
