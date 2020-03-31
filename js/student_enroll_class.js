@@ -7,6 +7,7 @@ document.body.onload = function()
 {
     load_grades();
     load_subjects();
+    load_teacher();
 }
 function load_grades()
 {
@@ -52,6 +53,28 @@ function load_subjects()
         }
     }
     request.send();
+}
+function load_teacher()
+{
+    var request = new XMLHttpRequest();
+    request.open("POST","../php/get_user.php",true);
+    request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    request.onreadystatechange = function()
+    {
+        if(request.readyState == 4 && request.status == 200)
+        {
+            var selector = _('teacher');
+            var result = JSON.parse(request.responseText);
+            for(i = 0 ; i < result.length ; ++i)
+            {
+                var opt = document.createElement('option');
+                opt.value = result[i].id;
+                opt.innerHTML = result[i].name;
+                selector.appendChild(opt);
+            }
+        }
+    }
+    request.send("type=2");
 }
 
 function student_filter_class()
