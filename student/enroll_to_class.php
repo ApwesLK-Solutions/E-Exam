@@ -289,9 +289,10 @@
                   <!-- Add the bg color to the header using any of the bg-* classes -->
                   <div class="widget-user-header bg-warning">
                     <h3 class="widget-user-username">Alexander Pierce</h3>
-                    <h5 class="widget-user-desc">Founder & CEO</h5>
+                    <h5 class="widget-user-desc mb-0 text-bold">Founder & CEO</h5>
+                    <h6 class="widget-user-desc ">SIGMA- BANDARWELA</h6>
                   </div>
-                  <div class="widget-user-image">
+                  <div class="widget-user-image mt-3">
                     <img class="img-circle elevation-2" src="../img/user1-128x128.jpg" alt="User Avatar">
                   </div>
                   <div class="card-footer">
