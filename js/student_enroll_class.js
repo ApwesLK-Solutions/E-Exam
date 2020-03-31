@@ -53,3 +53,31 @@ function load_subjects()
     }
     request.send();
 }
+
+function student_filter_class()
+{
+    var grade = _("grade").value;
+    var subject = _("subject").value;
+    var teacher = _("teacher").value;
+
+    if(grade === "" && subject=== "" || teacher== "")
+    {
+        toastr.error("please Select at least grade and subject to get optimum results..");
+    }
+    else
+    {
+        var request = new XMLHttpRequest();
+        request.open("POST","../php/get_subjects.php",true);
+        request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        request.onreadystatechange = function()
+        {
+            if(request.readyState == 4 && request.status == 200)
+            {
+                
+                
+                
+            }
+        }
+        request.send("grade=" + grade + "&subject=" + subject + "&teacher=" + teacher);
+    }
+}
