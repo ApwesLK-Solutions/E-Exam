@@ -171,7 +171,7 @@
           <img src="../img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Alexander Pierce</a>
+          <a href="#" class="d-block"><?php echo $_SESSION['name']; ?></a>
         </div>
       </div>
 
@@ -299,7 +299,7 @@
                   <td>physics</td>
                   <td>Chammod priyamal</td>
                   <td>sakya nugegoda</td>
-                  <td class="text-center"><button type="button"   rel="tooltip" data-placement="left" title="Unenroll Student" class="btn btn-link btn-icon"><i class="fa fa-trash-alt"></i></button></td>
+                  <td class="text-center"><button type="button"  rel="tooltip" data-placement="left" title="View Student Details" class="btn btn-link btn-icon"><i class="fa fa-eye"></i></button><button type="button"  rel="tooltip" data-placement="left" title="Unenroll Student" class="btn btn-link btn-icon"><i class="fa fa-trash-alt"></i></button></td>
                 </tr>
             </table>
           </div>
