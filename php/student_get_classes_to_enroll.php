@@ -1,5 +1,7 @@
 <?php
 
+    session_start();
+    $uid = $_SESSION['id'];
     include 'database.php';
 
     $grade = $_POST['grade'];
@@ -13,8 +15,8 @@
         $teacher = '%';
     }
 
-    $cmd = $conn->prepare("SELECT grade.name as GRADE , subject.name as SUBJECT , users.name as NAME , enroll_key as EKEY , visible_enroll_key as EKEYV , class.address AS ADDRESS  FROM class , grade , subject , users WHERE subject = ? and grade = ? and owner LIKE ? and grade.id = class.grade and subject.id = class.subject and class.owner = users.id");
-    $cmd->bind_param("iis",$subject , $grade , $teacher);
+    $cmd = $conn->prepare("SELECT grade.name as GRADE , subject.name as SUBJECT , users.name as NAME , enroll_key as EKEY , visible_enroll_key as EKEYV FROM class , grade , subject , users WHERE subject = ? and grade = ? and owner LIKE ? and grade.id = class.grade and subject.id = class.subject and class.owner = users.id and class.id NOT IN(SELECT class from enrollment where uid  = ?)");
+    $cmd->bind_param("iisi",$subject , $grade , $teacher,$uid);
     $cmd->execute();
     $classes = array();
     $result = $cmd->get_result();
