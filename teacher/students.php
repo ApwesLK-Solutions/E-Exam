@@ -214,7 +214,7 @@
           </li>
           <!-- class nav end-->
           <li class="nav-item">
-            <a href="./students.php" class="nav-link active">
+            <a href="./students.php?grade=all&subject=all&institute=all" class="nav-link active">
               <i class="nav-icon fas fa-user-graduate"></i>
               <p>
                Students
@@ -263,19 +263,22 @@
                 <div class="form-group">
                   <label>Select Grade</label>
                   <select class="form-control select2" id="grade" name="grade" data-placeholder="Select a Grade" style="width: 100%;" >
+                  <option value="ALL">ALL</option>
                   </select>
                 </div>
 
                 <div class="form-group">
                   <label>Select Subject</label>
                   <select class="form-control select2" id="subject" name="subject" data-placeholder="Select a Subject" style="width: 100%;" >
-                  </select>
+                  <option value="ALL">ALL</option>  
+                </select>
                 </div>
 
                 <div class="form-group">
                   <label>Select Institute</label>
                   <select class="form-control select2" id="institute" name="institute" data-placeholder="Select Institute" style="width: 100%;" >
-                  </select>
+                  <option value="ALL">ALL</option>
+                </select>
                 </div>
               </div>
             </div>

@@ -886,5 +886,7 @@
 <script src="../js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="../js/demo.js"></script>
+<!-- Notification -->
+<script src="../js/notification.js"></script>
 </body>
 </html>
